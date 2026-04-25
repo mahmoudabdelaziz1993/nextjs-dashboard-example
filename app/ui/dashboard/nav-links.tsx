@@ -16,8 +16,7 @@ const links = [
     name: 'Invoices',
     href: '/dashboard/invoices',
     icon: DocumentDuplicateIcon,
-  },
-  { name: 'Customers', href: '/dashboard/customers', icon: UserGroupIcon },
+  }
 ];
 
 export default function NavLinks() {
@@ -33,12 +32,12 @@ export default function NavLinks() {
             key={link.name}
             href={link.href}
             className={clsx(
-              //base styles            
-              "flex h-[48px] grow items-center justify-center gap-2 rounded-md bg-gray-50 p-3 text-sm font-medium hover:bg-sky-100 hover:text-blue-600 md:flex-none md:justify-start md:p-2 md:px-3"
-              ,
+              "flex h-[48px] grow items-center justify-center gap-2 rounded-md p-3 text-sm font-medium md:flex-none md:justify-start md:p-2 md:px-3",
               {
-                //active styles
-                "bg-sky-100 text-blue-600": pathname === link.href
+                // Base/Inactive styles
+                "bg-zinc-200 text-zinc-900 hover:bg-emerald-200 hover:text-emerald-900": pathname !== link.href,
+                // Active styles
+                "bg-emerald-900 text-emerald-50": pathname === link.href,
               }
             )}
           >

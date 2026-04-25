@@ -1,4 +1,4 @@
-import '@/app/ui/global.css';
+import './global.css';
 import { baseFont } from '@/app/ui/fonts';
 export default function RootLayout({
   children,
