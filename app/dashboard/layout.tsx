@@ -1,6 +1,9 @@
 import SideNav from '@/app/ui/dashboard/sidenav';
+import { connection } from 'next/server'; // Import the new function
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+export default async function Layout({ children }: { children: React.ReactNode }) {
+      await connection();
+
     return (
         <div className="flex h-screen flex-col md:flex-row md:overflow-hidden  bg-zinc-100">
             <div className="w-full flex-none md:w-64">
